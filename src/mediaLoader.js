@@ -1,9 +1,9 @@
-const fs = require('fs'); // Pull in the file system module
+/* onst fs = require('fs'); // Pull in the file system module
 const path = require('path');
 
-const getParty = (request, response) => {
-  const file = path.resolve(__dirname, '../client/party.mp4');
+const loadFile = (request, response, directory, fileType) => {
 
+  const file = path.resolve(__dirname, directory);
   fs.stat(file, (err, stats) => {
     if (err) {
       if (err.code === 'ENOENT') {
@@ -34,7 +34,7 @@ const getParty = (request, response) => {
       'Content-Range': `bytes ${start}-${end}/${total}`,
       'Accept-Ranges': 'bytes',
       'Content-Length': chunkSize,
-      'Content-Type': 'video/mp4',
+      'Content-Type': fileType,
     });
 
     const stream = fs.createReadStream(file, { start, end });
@@ -51,4 +51,4 @@ const getParty = (request, response) => {
   });
 };
 
-module.exports.getParty = getParty;
+module.exports.loadFile = loadFile; */
