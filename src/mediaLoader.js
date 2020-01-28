@@ -1,9 +1,8 @@
-/* onst fs = require('fs'); // Pull in the file system module
+const fs = require('fs'); // Pull in the file system module
 const path = require('path');
 
 const loadFile = (request, response, directory, fileType) => {
-
-  const file = path.resolve(__dirname, directory);
+  const file = path.resolve(__dirname, `${directory}`);
   fs.stat(file, (err, stats) => {
     if (err) {
       if (err.code === 'ENOENT') {
@@ -34,7 +33,7 @@ const loadFile = (request, response, directory, fileType) => {
       'Content-Range': `bytes ${start}-${end}/${total}`,
       'Accept-Ranges': 'bytes',
       'Content-Length': chunkSize,
-      'Content-Type': fileType,
+      'Content-Type': `${fileType}`,
     });
 
     const stream = fs.createReadStream(file, { start, end });
@@ -51,4 +50,4 @@ const loadFile = (request, response, directory, fileType) => {
   });
 };
 
-module.exports.loadFile = loadFile; */
+module.exports.loadFile = loadFile;
