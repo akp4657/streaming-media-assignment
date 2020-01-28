@@ -1,0 +1,26 @@
+{
+  "name": "streaming-media-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Tests Complete\"",
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akp4657/streaming-media-assignment.git"
+  },
+  "author": "Anthony Pichardo",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/akp4657/streaming-media-assignment/issues"
+  },
+  "homepage": "https://github.com/akp4657/streaming-media-assignment#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
